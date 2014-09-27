@@ -1,0 +1,41 @@
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# SublimeText
+# SublimeText project files
+*.sublime-workspace
+
+# Pycharm
+.idea
+
+# Python
+*.py[cod]
+
+# Database
+*.db
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Sphinx
+_build
+
+# Bower
+components/
