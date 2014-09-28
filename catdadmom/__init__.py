@@ -1,3 +1,7 @@
+""":mod:`catdatmom` --- CatDadMom
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+"""
 from flask import Flask
 import os
 
