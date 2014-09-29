@@ -2,13 +2,16 @@
 <html>
 <head>
     <title>Cat Dad Mom</title>
-    <link rel="stylesheet" href="/static/components/normalize.css">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename="components/bootstrap/dist/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/style.css") }}">
     {% block css %}{% endblock %}
 </head>
 <body>
-{% block content %}{% endblock %}
-<script src="/static/components/jquery/dist/jquery.js"></script>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+<script src="{{ url_for('static', filename="components/jquery/dist/jquery.min.js") }}"></script>
+<script src="{{ url_for('static', filename="components/bootstrap/dist/js/bootstrap.min.js") }}"></script>
 {% block js %}{% endblock %}
 </body>
 </html>
