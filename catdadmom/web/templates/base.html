@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cat Dad Mom</title>
-    <link rel="stylesheet" href="/static/components/normalize.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    {% block css %}{% endblock %}
+    {% block head %}
+        <title>
+            {% block title %}
+                CatDadMom
+            {% endblock %}
+        </title>
+        <link rel="stylesheet" href="/static/components/normalize.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endblock %}
 </head>
 <body>
-{% block content %}{% endblock %}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-{% block js %}{% endblock %}
+<h1>
+    <a href="{{ url_for('user.home') }}">CatDadMom</a>
+</h1>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+{% if not current_user %}
+    <ul>
+        <li>
+            <a href="{{ url_for('user.signup_form') }}">회원 가입</a>
+        </li>
+        <li>
+            <a href="{{ url_for('user.login') }}">로그인</a>
+        </li>
+    </ul>
+{% else %}
+    <ul>
+        <li>
+            <a href="{{ url_for('user.logout') }}">로그아웃</a>
+        </li>
+    </ul>
+{% endif %}
+{% block body %}
+{% endblock %}
 </body>
 </html>

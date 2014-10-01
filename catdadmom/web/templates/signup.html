@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    회원 가입
+{% endblock %}
+
+{% block body %}
+    <form action="{{ url_for('user.signup') }}" method="POST">
+        <ul>
+            <li>
+                <label for="email">이메일</label>
+                <input id="email" name="email" type="email">
+            </li>
+            <li>
+                <label for="login">아이디</label>
+                <input id="login" name="login" type="text">
+            </li>
+            <li>
+                <label for="password">비밀번호</label>
+                <input id="password" name="password" type="password">
+            </li>
+        </ul>
+        <input type="submit">
+    </form>
+{% endblock %}

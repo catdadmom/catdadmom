@@ -22,6 +22,7 @@ setup(
     },
     install_requires=[
         'Flask',
-        'SQLAlchemy'
+        'SQLAlchemy',
+        'bcrypt'
     ]
 )

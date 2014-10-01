@@ -4,7 +4,8 @@
 """
 from flask import Flask
 
-from . import main
+from . import user
+from .db import setup_session
 
 
 def create_app(config):
@@ -16,5 +17,6 @@ def create_app(config):
     """
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_pyfile(config)
-    app.register_blueprint(main.bp)
+    setup_session(app)
+    app.register_blueprint(user.bp)
     return app
