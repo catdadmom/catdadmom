@@ -23,6 +23,10 @@ setup(
     install_requires=[
         'Flask',
         'SQLAlchemy',
-        'bcrypt'
-    ]
+        'bcrypt',
+        'click'
+    ],
+    entry_points={
+        'console_scripts': ['cdm = catdadmom.cli:cli']
+    }
 )
