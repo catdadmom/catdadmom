@@ -2,7 +2,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 """
-from sqlalchemy.orm import deferred
+from sqlalchemy.orm import deferred, relationship
 from sqlalchemy.schema import Column
 from sqlalchemy.sql.functions import now
 from sqlalchemy.types import DateTime, Integer, Float
@@ -21,6 +21,12 @@ class Location(Base):
 
     #: (:class:`sqlalchemy.types.Float`)
     longitude = Column(Float)
+
+    #: (:class:`sqlalchemy.orm.relationship`)
+    animals = relationship(
+        'Animal',
+        secondary='animallocation'
+    )
 
     #: (:class:`sqlalchemy.types.DateTime`) The registered time.
     created_at = deferred(

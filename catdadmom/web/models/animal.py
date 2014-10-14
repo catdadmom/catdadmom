@@ -28,6 +28,12 @@ class Animal(Base):
     #: (:class:`sqlalchemy.types.Boolean`)
     castration = Column(Boolean)
 
+    #: (:class:`sqlalchemy.orm.relationship`)
+    locations = relationship(
+        'Location',
+        secondary='animallocation'
+    )
+
     #: (:class:`sqlalchemy.types.DateTime`) The registered time.
     created_at = deferred(
         Column(DateTime(timezone=True), nullable=False, default=now()),

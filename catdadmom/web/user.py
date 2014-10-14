@@ -8,11 +8,12 @@ from flask import (Blueprint, abort, flash, redirect, g, render_template,
 from werkzeug.local import LocalProxy
 from sqlalchemy.exc import IntegrityError
 
-from .db import session
+from ..db import session
 from .models.user import User
 from .models.location import Location
 from .models.animal import Animal
 from .models.picture import Picture
+from .models.animallocation import AnimalLocation
 
 
 bp = Blueprint('user', __name__)
