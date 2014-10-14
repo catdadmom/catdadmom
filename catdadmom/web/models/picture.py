@@ -9,7 +9,6 @@ from sqlalchemy.sql.functions import now
 from sqlalchemy.types import DateTime, Integer, String
 
 from ...orm import Base
-from .animal import Animal
 
 
 class Picture(Base):
@@ -22,11 +21,11 @@ class Picture(Base):
     title = Column(String)
 
     #: (:class:`sqlalchemy.types.Integer`)
-    animal_id = Column(Integer, ForeignKey('animals.id'))
+    animal_id = Column(Integer, ForeignKey('animals.id'), nullable=False)
 
     #: (:class:`sqlalchemy.orm.relationship`)
     animal = relationship(
-        Animal,
+        'Animal',
         backref=backref('pictures', uselist=True, cascade='delete,all')
     )
 
