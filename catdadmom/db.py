@@ -8,7 +8,7 @@ from flask import current_app, g
 from sqlalchemy import create_engine
 from werkzeug.local import LocalProxy
 
-from ..orm import Session
+from .orm import Session
 
 
 def get_session():

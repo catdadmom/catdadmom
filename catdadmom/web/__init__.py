@@ -5,7 +5,7 @@
 from flask import Flask
 
 from . import user
-from .db import setup_session
+from ..db import setup_session
 
 
 def create_app(config):
