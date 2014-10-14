@@ -1,4 +1,4 @@
-""":mod:`catdadmom.user` --- Users
+""":mod:`catdadmom.models.user` --- Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 """
@@ -9,7 +9,7 @@ from sqlalchemy.sql.functions import now
 from sqlalchemy.types import Boolean, DateTime, Integer, String, Unicode
 
 
-from .orm import Base
+from ...orm import Base
 
 
 class User(Base):

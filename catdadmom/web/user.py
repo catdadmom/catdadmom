@@ -9,7 +9,10 @@ from werkzeug.local import LocalProxy
 from sqlalchemy.exc import IntegrityError
 
 from .db import session
-from ..user import User
+from .models.user import User
+from .models.location import Location
+from .models.animal import Animal
+from .models.picture import Picture
 
 
 bp = Blueprint('user', __name__)
@@ -36,7 +39,7 @@ def set_current_user(user):
     g.current_user = user
 
 
-#: (:class:`~werkzeug.local.LocalProxy` of :class:`~catdadmom.user.User`)
+#: (:class:`~werkzeug.local.LocalProxy` of :class:`~catdadmom.models.user.User`)
 #: The currently signed in user.
 current_user = LocalProxy(get_current_user)
 
