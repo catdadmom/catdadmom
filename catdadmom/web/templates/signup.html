@@ -1,25 +1,40 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    회원 가입
+회원 가입
 {% endblock %}
 
 {% block body %}
-    <form action="{{ url_for('user.signup') }}" method="POST">
-        <ul>
-            <li>
-                <label for="email">이메일</label>
-                <input id="email" name="email" type="email">
-            </li>
-            <li>
-                <label for="login">아이디</label>
-                <input id="login" name="login" type="text">
-            </li>
-            <li>
-                <label for="password">비밀번호</label>
-                <input id="password" name="password" type="password">
-            </li>
-        </ul>
-        <input type="submit">
-    </form>
+    <section class="login">
+        <header>
+            <h1>캣댓맘 회원가입!</h1>
+        </header>
+        <div class="cat-box">
+            <div class="cont-box-rotate-left"></div>
+            <div class="cont-box-rotate-left-inner"></div>
+            <div class="cont-box-rotate-right"></div>
+            <div class="cont-box-rotate-right-inner"></div>
+            <div class="left-eye"></div>
+            <div class="left-eye-inner"></div>
+            <div class="right-eye"></div>
+            <div class="right-eye-inner"></div>
+            <div class="moustache left-moustache-1"></div>
+            <div class="moustache left-moustache-2"></div>
+            <div class="moustache left-moustache-3"></div>
+            <div class="moustache right-moustache-1"></div>
+            <div class="moustache right-moustache-2"></div>
+            <div class="moustache right-moustache-3"></div>
+            <div class="nose"></div>
+            <div class="login-box">
+                <form action="{{ url_for('user.signup') }}" method="POST" role="form">
+                    <input type="email" class="login-control" id="email" name="email" placeholder="이메일">
+                    <input type="text" class="login-control" id="login" name="login" placeholder="아이디">
+                    <input type="password" class="login-control" id="password" name="password" placeholder="패스워드">
+                    <div>
+                        <button type="submit" class="btn btn-default">회원가입</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 {% endblock %}
