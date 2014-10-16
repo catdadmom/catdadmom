@@ -11,6 +11,8 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+    @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    font-family: 'Nanum Gothic', serif;
     margin: 0;
     padding: 0;
     border: 0;
@@ -18,38 +20,36 @@ time, mark, audio, video {
 }
 
 body {
-    background-color: #12B8CC;
-    padding: 10px;
+    background-color: #F8F8F8;
 }
 
 h1 a,
 h1 a:link,
 h1 a:hover {
     color: #fff;
-    text-decoration:none;
+    text-decoration: none;
 }
 
-#login {
-    padding: 30px;
-}
-
-#login > header > h1 {
+.login > header > h1 {
     text-align: center;
     font-size: 50px;
-    padding: 20px;
+    line-height: 200px;
+    background-color: #00C5B1;
 }
 
 .cat-box {
-    background: #fff;
+    background-color: #fff;
     border-radius: 10px;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
     padding: 10px;
-    opacity: 0.85;
-    position: relative;
-    margin: 5% auto;
     width: 700px;
     height: 500px;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -350px;
 }
 
 .cat-box .login-box {
@@ -58,20 +58,27 @@ h1 a:hover {
     bottom: 0;
     position: absolute;
     text-align: center;
-    background: #74370A;
+    background-color: #ccc;
     padding: 20px 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-
 .cat-box .login-control {
     width: 80%;
     border: 0;
-    padding: 1.5% 3%;
+    padding: 10px;
     margin-bottom: 15px;
     background: #fff;
     border-radius: 5px;
+    color: #000;
+}
+
+.cat-box .btn {
+    width: 25%;
+    background-color: #00C5B1;
+    border-color: #00C5B1;
+    color: #fff;
 }
 
 .cont-box-rotate-left {
@@ -118,14 +125,25 @@ h1 a:hover {
     right: 80px;
 }
 
+.left-eye-wrap {
+    background: #fff;
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 30px;
+    left: 150px;
+    border: 1px solid #000;
+}
+
 .left-eye {
     background: #000;
     border-radius: 100px;
     width: 40px;
-    height: 40px;
+    height: 75px;
     position: absolute;
-    top: 30px;
-    left: 150px;
+    top: 32px;
+    left: 170px;
 }
 
 .left-eye-inner {
@@ -135,17 +153,29 @@ h1 a:hover {
     height: 10px;
     position: absolute;
     top: 35px;
-    left: 160px;
+    left: 190px;
+}
+
+
+.right-eye-wrap {
+    background: #fff;
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    border: 1px solid #000;
 }
 
 .right-eye {
     background: #000;
     border-radius: 100px;
     width: 40px;
-    height: 40px;
+    height: 75px;
     position: absolute;
-    top: 30px;
-    right: 150px;
+    top: 32px;
+    right: 170px;
 }
 
 .right-eye-inner {
@@ -155,44 +185,44 @@ h1 a:hover {
     height: 10px;
     position: absolute;
     top: 35px;
-    right: 160px;
+    right: 190px;
 }
 
 .moustache {
     position: absolute;
     display: inline-block;
-    width: 100px;
+    width: 150px;
     height: 10px;
-    background: #fff;
+    background: #000;
 }
 
 .left-moustache-1 {
-    top: 200px;
+    top: 150px;
     left: -50px;
 }
 
 .left-moustache-2 {
-    top: 220px;
+    top: 170px;
     left: -50px;
 }
 
 .left-moustache-3 {
-    top: 240px;
+    top: 190px;
     left: -50px;
 }
 
 .right-moustache-1 {
-    top: 200px;
+    top: 150px;
     right: -50px;
 }
 
 .right-moustache-2 {
-    top: 220px;
+    top: 170px;
     right: -50px;
 }
 
 .right-moustache-3 {
-    top: 240px;
+    top: 190px;
     right: -50px;
 }
 
@@ -205,4 +235,25 @@ h1 a:hover {
     position: absolute;
     top: 110px;
     left: 335px;
+}
+
+.nose-philtrum {
+    width: 0;
+    height: 100px;
+    position: absolute;
+    top: 115px;
+    left: 363px;
+    border: 2px solid #000;
+}
+
+.mouse {
+    width: 80px;
+    height: 25px;
+    border-radius: 100px;
+    top: 193px;
+    left: 325px;
+    border-color: transparent #000 #000 #000;
+    border-style: solid;
+    border-width: 3px;
+    position: absolute;
 }

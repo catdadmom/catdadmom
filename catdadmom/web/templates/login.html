@@ -1,39 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'form_base.html' %}
 
 {% block title %}
     로그인
 {% endblock %}
 
-{% block body %}
-    <section id="login">
-        <header>
-            <h1>Cat Dad Mom Login</h1>
-        </header>
-        <div class="cat-box">
-            <div class="cont-box-rotate-left"></div>
-            <div class="cont-box-rotate-left-inner"></div>
-            <div class="cont-box-rotate-right"></div>
-            <div class="cont-box-rotate-right-inner"></div>
-            <div class="left-eye"></div>
-            <div class="left-eye-inner"></div>
-            <div class="right-eye"></div>
-            <div class="right-eye-inner"></div>
-            <div class="moustache left-moustache-1"></div>
-            <div class="moustache left-moustache-2"></div>
-            <div class="moustache left-moustache-3"></div>
-            <div class="moustache right-moustache-1"></div>
-            <div class="moustache right-moustache-2"></div>
-            <div class="moustache right-moustache-3"></div>
-            <div class="nose"></div>
-            <div class="login-box">
-                <form action="{{ url_for('user.login') }}" method="POST" role="form">
-                    <input type="email" class="login-control" id="email" placeholder="Enter email">
-                    <input type="password" class="login-control" id="password" placeholder="Password">
-                    <div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </div>
-                </form>
-            </div>
+{% block formtitle %}캣댓맘 로그인!{% endblock %}
+{% block form %}
+    <form action="{{ url_for('user.login') }}" method="POST" role="form">
+        <input type="text" class="login-control" id="login" name="login" placeholder="아이디">
+        <input type="password" class="login-control" id="password" name="password" placeholder="패스워드">
+        <div>
+            <button type="submit" class="btn btn-default">로그인</button>
         </div>
-    </section>
+    </form>
 {% endblock %}

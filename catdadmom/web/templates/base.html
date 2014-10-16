@@ -7,12 +7,13 @@
         CatDadMom
         {% endblock %}
     </title>
+    {% endblock %}
     <link rel="stylesheet" href="{{ url_for('static', filename='components/bootstrap/dist/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block css %}
     {% endblock %}
 </head>
 <body>
-<div class="container">
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     <ul>
@@ -24,6 +25,7 @@
     {% endwith %}
     {% block body %}
     {% endblock %}
-</div>
+    {% block script %}
+    {% endblock %}
 </body>
 </html>
