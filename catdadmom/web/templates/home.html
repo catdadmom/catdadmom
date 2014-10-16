@@ -1,8 +1,21 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <div id="map"></div>
-    <script src="{{ url_for('static', filename="components/jquery/dist/jquery.min.js") }}"></script>
-    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=90f82c242397f8ad0b2aa634ea2f504d8ddebbe6"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% if not current_user %}
+        <a href="{{ url_for('user.signup_form') }}" class="btn btn-default">회원 가입</a>
+        <a href="{{ url_for('user.login') }}" class="btn btn-default">로그인</a>
+    {% else %}
+        <a href="{{ url_for('user.logout') }}" class="btn btn-default">로그아웃</a>
+    {% endif %}
+
+    <input type="file" id="files"/>
+    <p id="status">Please select a file</p>
+    <div id="preview"></div>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='components/jquery/dist/jquery.min.js') }}"></script>
+    <!-- script src="//apis.daum.net/maps/maps3.js?apikey=90f82c242397f8ad0b2aa634ea2f504d8ddebbe6"></script -->
+    <script src="{{ url_for('static', filename='components/s3upload/s3upload.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 {% endblock %}
