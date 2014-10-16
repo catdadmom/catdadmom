@@ -20,6 +20,9 @@ class Picture(Base):
     #: (:class:`sqlalchemy.types.String`)
     title = Column(String)
 
+    #: (:class:`sqlalchemy.types.String`)
+    path = Column(String(1000))
+
     #: (:class:`sqlalchemy.types.Integer`)
     animal_id = Column(Integer, ForeignKey('animals.id'), nullable=False)
 
