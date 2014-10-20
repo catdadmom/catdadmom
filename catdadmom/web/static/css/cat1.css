@@ -1,0 +1,231 @@
+.cat-box {
+    background-color: #fff;
+    background-color: #EBEBEB;
+    border-radius: 10px;
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    padding: 10px;
+    width: 700px;
+    height: 500px;
+    position: fixed;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -350px;
+    border-bottom: 4px solid #2B3D4F;
+}
+
+.cat-box .login-box {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    background-color: #EBEBEB;
+    background-color: #34495E;
+    padding: 20px 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cat-box .login-control {
+    width: 80%;
+    border: 0;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 5px;
+    color: #000;
+}
+
+.cat-box .login-control:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.cat-box .btn {
+    width: 25%;
+    background-color: #1ABC9C;
+    color: #fff;
+    border: 1px solid #fff;
+    border-bottom: 4px solid #fff;
+    border-color: #16A085;
+}
+
+.cont-box-rotate-left {
+    border-color: transparent transparent #EBEBEB transparent;
+    border-style: solid;
+    border-width: 100px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -150px;
+    left: 5px;
+}
+
+.cont-box-rotate-left-inner {
+    border-color: transparent transparent #E2A1C2 transparent;
+    border-style: solid;
+    border-width: 25px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -50px;
+    left: 80px;
+}
+
+.cont-box-rotate-right {
+    border-color: transparent transparent #EBEBEB transparent;
+    border-style: solid;
+    border-width: 100px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -150px;
+    right: 5px;
+}
+
+.cont-box-rotate-right-inner {
+    border-color: transparent transparent #E2A1C2 transparent;
+    border-style: solid;
+    border-width: 25px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -50px;
+    right: 80px;
+}
+
+.left-eye-wrap {
+    background: #fff;
+    background-color: #F2D867;
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 30px;
+    left: 150px;
+    border: 3px solid #000;
+}
+
+.left-eye {
+    background: #000;
+    border-radius: 100px;
+    width: 40px;
+    height: 75px;
+    position: absolute;
+    top: 32px;
+    left: 170px;
+}
+
+.left-eye-inner {
+    background: #fff;
+    border-radius: 100px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 35px;
+    left: 190px;
+}
+
+
+.right-eye-wrap {
+    background-color: #F2D867;
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    border: 3px solid #000;
+}
+
+.right-eye {
+    background: #000;
+    border-radius: 100px;
+    width: 40px;
+    height: 75px;
+    position: absolute;
+    top: 32px;
+    right: 170px;
+}
+
+.right-eye-inner {
+    background: #fff;
+    border-radius: 100px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 35px;
+    right: 190px;
+}
+
+.moustache {
+    position: absolute;
+    display: inline-block;
+    width: 150px;
+    height: 10px;
+    background: #000;
+}
+
+.left-moustache-1 {
+    top: 150px;
+    left: -50px;
+}
+
+.left-moustache-2 {
+    top: 170px;
+    left: -50px;
+}
+
+.left-moustache-3 {
+    top: 190px;
+    left: -50px;
+}
+
+.right-moustache-1 {
+    top: 150px;
+    right: -50px;
+}
+
+.right-moustache-2 {
+    top: 170px;
+    right: -50px;
+}
+
+.right-moustache-3 {
+    top: 190px;
+    right: -50px;
+}
+
+.nose {
+    border-color: #000 transparent transparent transparent;
+    border-style: solid;
+    border-width: 30px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 110px;
+    left: 335px;
+}
+
+.nose-philtrum {
+    width: 0;
+    height: 100px;
+    position: absolute;
+    top: 115px;
+    left: 363px;
+    border: 2px solid #000;
+}
+
+.mouse {
+    width: 80px;
+    height: 10px;
+    border-radius: 10px;
+    top: 205px;
+    left: 325px;
+    border-color: transparent #000 #000 #000;
+    border-style: solid;
+    border-width: 3px;
+    position: absolute;
+}
