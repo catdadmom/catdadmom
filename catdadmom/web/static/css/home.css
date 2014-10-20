@@ -1,0 +1,21 @@
+body {
+    background-color: #1ABC9C;
+    color: #000;
+}
+
+.panel {
+    border: 0 !important;
+}
+
+.panel > .panel-heading {
+    background-color: #34495E;
+}
+
+.panel .panel-body {
+    background-color: #EFF0F0;
+    border-radius: 10px;
+}
+
+.panel .panel-body p {
+    color: #2C3E50;
+}

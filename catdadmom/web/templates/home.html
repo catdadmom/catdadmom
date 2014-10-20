@@ -1,16 +1,69 @@
 {% extends 'base.html' %}
 
-{% block body %}
-    {% if not current_user %}
-        <a href="{{ url_for('user.signup_form') }}" class="btn btn-default">회원 가입</a>
-        <a href="{{ url_for('user.login') }}" class="btn btn-default">로그인</a>
-    {% else %}
-        <a href="{{ url_for('user.logout') }}" class="btn btn-default">로그아웃</a>
-    {% endif %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"/>
+{% endblock %}
 
-    <input type="file" id="files"/>
-    <p id="status">Please select a file</p>
-    <div id="preview"></div>
+{% block body %}
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
+                        data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../" class="navbar-brand">CatDadMom</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        {% if not current_user %}
+                            <a href="{{ url_for('user.signup_form') }}">회원 가입</a>
+                            <a href="{{ url_for('user.login') }}">로그인</a>
+                        {% else %}
+                            <a href="{{ url_for('user.logout') }}">로그아웃</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="jumbotron">
+        <input type="file" id="files"/>
+
+        <p id="status">Please select a file</p>
+
+        <div id="preview"></div>
+    </div>
+    <div class="container">
+
+
+        <section class="lists">
+            {% if cats %}
+                {% for cat in cats %}
+                    <div class="panel">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">{{ cat.name }}</div>
+                        <div class="panel-body">
+                            <p>{{ cat.age }}</p>
+
+                            <p>{{ cat.sex }}</p>
+
+                            <p>{{ cat.castration }}</p>
+
+                            <p>...</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>등록된 고양이가 없습니다.</p>
+            {% endif %}
+        </section>
+    </div>
 {% endblock %}
 
 {% block script %}

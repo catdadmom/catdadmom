@@ -10,7 +10,7 @@ from werkzeug.local import LocalProxy
 from sqlalchemy.exc import IntegrityError
 from hashlib import sha1
 
-from ..db import session
+from ..db import session, get_session
 from .models.user import User
 from .models.location import Location
 from .models.animal import Animal
@@ -55,7 +55,10 @@ def inject_current_user():
 
 @bp.route('/')
 def home():
-    return render_template('home.html')
+    s = get_session()
+    animals = s.query(Animal).all()
+    print animals
+    return render_template('home.html', cats=animals)
 
 @bp.route('/sign_s3/')
 def sign_s3():
